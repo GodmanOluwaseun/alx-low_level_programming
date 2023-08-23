@@ -24,9 +24,10 @@ void puts_half(char *str)
 		b++;
 	}
 
-	while (b < a)
+	while (b != '\0')
 	{
 		putchar (str[b]);
+		b++;
 	}
 	putchar ('\n');
 }
