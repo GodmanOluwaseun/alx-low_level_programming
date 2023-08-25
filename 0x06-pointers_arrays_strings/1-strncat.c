@@ -5,8 +5,8 @@
  *
  * @dest: destination of copied string
  * @src: source of copied string
- * @n number of bytes of string to be copied
- * return: dest
+ * @n: number of bytes of string to be copied
+ * Return: value of dest
  */
 
 char *_strncat(char *dest, char *src, int n)
