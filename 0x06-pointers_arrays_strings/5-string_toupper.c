@@ -4,14 +4,14 @@
  * *string_toupper- Changes all lowercase letters of a string to uppercase.
  *
  * @str: pointer to string
- * Return: (string)
+ * Return: pointer to modified string
  */
 
 char *string_toupper(char *str)
 {
 	char *ptr = str;
 
-	while (*str != '\0')
+	while (*ptr != '\0')
 	{
 		if (*ptr >= 'a' && *ptr <= 'z')
 	{
