@@ -22,7 +22,6 @@ char *leet(char *s)
 			if (s[a] == leet[b])
 			{
 				s[a] = leetnum[b];
-				break;
 			}
 		}
 		a++;
