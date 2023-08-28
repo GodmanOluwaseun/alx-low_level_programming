@@ -10,19 +10,21 @@
 char *leet(char *s)
 {
 	int a = 0;
-	int b = 0;
+	int b;
 	char leet[] = "aeotlAEOTL";
 	char leetnum[] = "4307143017";
 
 	while (s[a] != '\0')
 	{
-		for ( ; leet[b] != '\0'; b++)
+		b = 0;
+		while (leet[b] != '\0')
 		{
 			if (s[a] == leet[b])
 			{
 				s[a] = leetnum[b];
 				break;
 			}
+			b++;
 		}
 		a++;
 	}
