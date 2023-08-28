@@ -16,11 +16,12 @@ char *leet(char *s)
 
 	while (s[a] != '\0')
 	{
-		for ( ; b <= 9; b++)
+		for ( ; leet[b] != '\0'; b++)
 		{
 			if (s[a] == leet[b])
 			{
 				s[a] = leetnum[b];
+				break;
 			}
 		}
 		a++;
