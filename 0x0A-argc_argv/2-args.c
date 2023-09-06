@@ -6,7 +6,6 @@
  *
  * @argc: Count of arguments
  * @argv: Pointer to string containing arguments.
- * @i: Index to loop through array.
  * Return: 0.
  */
 
