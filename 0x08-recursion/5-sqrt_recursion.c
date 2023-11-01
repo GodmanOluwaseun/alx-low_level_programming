@@ -32,5 +32,5 @@ int _sqrt_checker(int n, int i)
 	else if (i * i > n)
 		return (-1);
 	else
-		return (n, i + 1);
+		return (_sqrt_checker(n, i + 1));
 }
