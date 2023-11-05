@@ -21,6 +21,7 @@ int main(int argc, char *argv[])
 
 	else
 	{
+
 	int coin = 0;
 
 	while (cent > 0)
