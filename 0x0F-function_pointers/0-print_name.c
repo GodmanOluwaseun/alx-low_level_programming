@@ -22,5 +22,12 @@ void print_name(char *name, void (*f)(char *))
 
 void print(char *s)
 {
-	printf("%s\n", s);
+	int i = 0;
+
+	while (s[i] != '\0')
+	{
+	_putchar(s[i]);
+	i++;
+	}
+	_putchar('\n');
 }
