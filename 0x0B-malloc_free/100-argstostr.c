@@ -30,7 +30,7 @@ char *argstostr(int ac, char **av)
 
 	for (i = 0; i < ac; i++)
 	{
-		strcpy(str[position], av[i]);
+		strcpy(str + position, av[i]);
 		position += strlen(av[i]);
 		str[position++] = '\n';
 	}
