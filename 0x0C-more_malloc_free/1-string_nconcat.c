@@ -11,19 +11,18 @@
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int length, i, j;
-	int a, position;
+	unsigned int length, i, j, a, position;
 	char *s3;
 
 	if (s1 == NULL)
-		s1 = “”;
+		s1 = "";
 	if (s2 == NULL)
-		s2 = “”;
+		s2 = "";
 
 	i = strlen(s1);
 	j = strlen(s2);
 
-	if (n >= s2)
+	if (n >= j)
 	{
 		n = j;
 	}
@@ -48,7 +47,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		s3[position] = s2[a];
 		position++;
 	}
-	s3[position] = ‘\0’;
+	s3[position] = '\0';
 
 	return (s3);
 }
