@@ -39,7 +39,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	for (a = 0; a < i; a++)
 	{
 		s3[a] = s1[a];
-		position += a;
+		position++;
 	}
 
 	for (a = 0; a < n; a++)
