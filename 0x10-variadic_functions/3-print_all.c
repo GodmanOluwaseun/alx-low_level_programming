@@ -2,7 +2,7 @@
 
 /**
  * print_all - Function that prints anything.
- * @format: Format specifier.
+ * @format: Format specifier
  * @...: Variable number of arguments.
  * Return: void.
  */
