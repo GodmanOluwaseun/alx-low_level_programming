@@ -29,7 +29,6 @@ void print_all(const char * const format, ...)
 				break;
 			case 's':
 				str = va_arg(args, char *);
-
 				if (str == NULL)
 				{
 					printf("(nil)");
@@ -41,9 +40,10 @@ void print_all(const char * const format, ...)
 				j++;
 				}
 				break;
+			default:
+				break;
 		}
-		if ((format[i + 1] != '\0') && (format[i] == 'c' || format[i] == 'i'
-					|| format[i] == 'f' || format[i] == 's'))
+		if (COMMA_PRINT_CHECK)
 		printf(",");
 		i++;
 	}
