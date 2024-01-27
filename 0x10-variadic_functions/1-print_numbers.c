@@ -2,6 +2,7 @@
 
 /**
  * print_numbers - Function that prints numbers, followed by a new line.
+ *
  * @separator: Pointer to delimiter character.
  * @n: Number of passed integers.
  * @...: VAriable no of arguments.
