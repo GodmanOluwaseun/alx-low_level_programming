@@ -1,7 +1,7 @@
 #ifndef DOG_H
 #define DOG_H
 
-#include <stdio.h>
+#include "main.h"
 
 /**
  * struct dog - A new struct with 3 members.
