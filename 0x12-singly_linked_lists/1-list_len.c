@@ -10,7 +10,7 @@
 size_t list_len(const list_t *h)
 {
 	size_t no_elements = 0;
-	list_t *ptr = NULL;
+	const list_t *ptr = NULL;
 
 	if (h == NULL)
 	{
