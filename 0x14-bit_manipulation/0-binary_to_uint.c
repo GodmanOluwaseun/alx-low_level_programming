@@ -10,7 +10,7 @@ unsigned int binary_to_uint(const char *b)
 {
 	unsigned int dec_value = 0, weight, place_value;
 
-	if (*b == NULL)
+	if (*b == '\0')
 	{
 		return (0);
 	}
