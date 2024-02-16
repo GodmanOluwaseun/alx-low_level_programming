@@ -16,22 +16,23 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	if (filename == NULL)
 	{
-		perror("access_file");
 		return (0);
 	}
 
 	fd = open(filename, O_RDONLY);
 	if (fd < 0)
 	{
-		perror("open");
 		return (0);
 	}
 
 	buff_ptr = malloc(letters + 1);
+	if (buff_ptr == NULL)
+		return (0);
+
 	bytes_read = read(fd, buff_ptr, letters);
 	if (bytes_read < 0)
 	{
-		perror("read");
+		free(buff_ptr);
 		close(fd);
 		return (0);
 	}
@@ -39,14 +40,14 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	((char *)buff_ptr)[bytes_read] = '\0';
 
 	bytes_written = write(STDOUT_FILENO, buff_ptr, letters);
-	if (bytes_written < 0 || bytes_written < bytes_read)
+	if (bytes_written < 0 || bytes_written != bytes_read)
 	{
-		perror("write");
+		free(buff_ptr);
 		close(fd);
 		return (0);
 	}
-
 	free(buff_ptr);
 	close(fd);
-	return (bytes_read);
+
+	return (bytes_written);
 }
