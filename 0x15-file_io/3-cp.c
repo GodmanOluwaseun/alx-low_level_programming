@@ -10,7 +10,7 @@
 
 int main(int argc, char *argv[])
 {
-	int fd, fd2;
+	int fd, fd2, fd3, fd4;
 	char buff[BUFF_SIZE];
 	ssize_t bytes_read, bytes_written;
 
@@ -25,7 +25,6 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
-
 	fd2 = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (fd2 < 0)
 	{
@@ -37,7 +36,6 @@ int main(int argc, char *argv[])
 	while ((bytes_read = read(fd, buff, BUFF_SIZE)) > 0)
 	{
 		bytes_written = write(fd2, buff, bytes_read);
-
 		if (bytes_written != bytes_read)
 		{
 			close(fd2);
@@ -53,7 +51,17 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
-	close(fd);
-	close(fd2);
+	fd3 = close(fd);
+	if (fd3 < 0)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd3);
+		exit(100);
+	}
+	fd4 = close(fd2);
+	if (fd4 < 0)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd4);
+		exit(100);
+	}
 	exit(0);
 }
