@@ -10,14 +10,15 @@
 
 int main(int argc, char *argv[])
 {
-	int fd, fd2, fd3, fd4;
+	int fd, fd2;
 	char buff[BUFF_SIZE];
 	ssize_t bytes_read, bytes_written;
 
 	if (argc != 3)
+	{
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
-
+	}
 	fd = open(argv[1], O_RDONLY);
 	if (fd < 0)
 	{
