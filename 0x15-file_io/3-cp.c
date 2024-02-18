@@ -15,10 +15,8 @@ int main(int argc, char *argv[])
 	ssize_t bytes_read, bytes_written;
 
 	if (argc != 3)
-	{
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
-	}
 
 	fd = open(argv[1], O_RDONLY);
 	if (fd < 0)
@@ -54,19 +52,7 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
-
-	fd3 = close(fd);
-	if (fd3 < 0)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd3);
-		exit(100);
-	}
-
-	fd4 = close(fd2);
-	if (fd4 < 0)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd4);
-		exit(100);
-	}
+	close(fd);
+	close(fd2);
 	exit(0);
 }
