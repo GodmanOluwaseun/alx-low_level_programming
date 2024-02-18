@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
 		exit(99);
 	}
 
-	while ((bytes_read = read(fd, buff, BUFF_SIZE)) >= 0)
+	while ((bytes_read = read(fd, buff, BUFF_SIZE)) > 0)
 	{
 		bytes_written = write(fd2, buff, bytes_read);
 
