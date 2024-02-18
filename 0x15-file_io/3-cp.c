@@ -33,24 +33,8 @@ int main(int argc, char *argv[])
 		exit(99);
 	}
 
-	while ((bytes_read = read(fd, buff, BUFF_SIZE)) > 0)
-	{
-		bytes_written = write(fd2, buff, bytes_read);
-		if (bytes_written != bytes_read)
-		{
-			close(fd2);
-			close(fd);
-			dprintf(STDERR_FILENO,  "Error: Can't write to %s\n", argv[2]);
-			exit(99);
-		}
-	}
-	if (bytes_read < 0)
-	{
-		close(fd);
-		close(fd2);
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-		exit(98);
-	}
+	COPY_MACRO_FD1_TO_BUFF_TO_FD2;
+
 	fd3 = close(fd);
 	if (fd3 < 0)
 	{
