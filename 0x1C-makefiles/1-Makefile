@@ -1,18 +1,10 @@
 .PHONY: all
 
 CC = gcc
-
-SRC = $(wildcard *.c)
-
+SRC = main.c school.c
 TARGET = school
 
-all = $(TARGET)
+all: $(TARGET)
 
 $(TARGET): $(SRC)
-	$(CC) $(SRC) -o
-
-main.o: main.c m.h
-	gcc -c main.c
-
-school.o: school.c m.h
-	gcc -c school.c
+	$(CC) $(SRC) -o $(TARGET)
