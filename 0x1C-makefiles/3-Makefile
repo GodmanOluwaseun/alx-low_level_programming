@@ -11,7 +11,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
-%.o: %.c
+%.o: $(SRC)
 	$(CC) -c $< -o $@
 
 clean:
