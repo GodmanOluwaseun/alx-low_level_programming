@@ -1,14 +1,16 @@
 .PHONY: all
 
 CC = gcc
-SRC = $(wildcard *.c)
-OBJ = $(wildcard *.o)
-NAME= school
+SRC = school.c main.c
+OBJ = school.o main.o
+NAME = school
 
-all: $(NAME) $(OBJ)
+all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) OBJ -o $(NAME)
+	$(CC) $(OBJ) -o $(NAME)
 
-$(OBJ): $(SRC)
-	$(CC) -c $(SRC)
+school.o: school.c
+	$(CC) -c school.c -o school.o
+main.o: main.c
+	$(CC)  -c main.c -o main.o
