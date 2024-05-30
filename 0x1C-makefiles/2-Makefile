@@ -1,0 +1,14 @@
+.PHONY: all
+
+CC = gcc
+SRC = $(wildcard *.c)
+OBJ = $(wildcard *.o)
+NAME= school
+
+all: $(NAME) $(OBJ)
+
+$(NAME): $(OBJ)
+	$(CC) OBJ -o $(NAME)
+
+$(OBJ): $(SRC)
+	$(CC) -c $(SRC)
