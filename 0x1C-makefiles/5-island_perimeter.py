@@ -1,4 +1,4 @@
-#/usr/bin/python3
+#!/usr/bin/python3
 
 """5-island_perimeter
 Returns perimeter of island described in grid argument.
