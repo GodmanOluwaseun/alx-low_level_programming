@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+
 """island_perimeter
     Returns perimeter of island described in grid argument.
 """
@@ -19,12 +20,12 @@ def island_perimeter(grid):
         for j in range(col):
 
             if grid[i][j] == 1:
-                
+
                 counter += 4
 
                 if i > 0 and grid[i - 1][j] == 1:
                     counter -= 2
                 if j> 0 and grid[i][j - 1] == 1:
                     counter -= 2
-    
+
     return counter
