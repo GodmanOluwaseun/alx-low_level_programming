@@ -21,6 +21,6 @@ oclean:
 	$(RM) -f *.o
 
 fclean:
-	$(RM) -f *
+	$(RM) -f *~ *.swp *.swn *.swo *.o $(NAME)
 
 re: oclean all
